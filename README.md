@@ -20,6 +20,7 @@ Honours-Cancer-Drug-Response-Project/
 ├── Projects/
 │   └── Cancer-Drug-Response-Prediction/
 │       ├── data/
+│       ├── experiments/
 │       ├── src/
 │
 ├── README.md
@@ -27,13 +28,7 @@ Honours-Cancer-Drug-Response-Project/
 ```
 
 ## Project Status
-
-The core `toy_pipeline` (Random Forest baseline) is functional and has completed:
-- Data cleaning and feature building (gene expression, drug fingerprints)
-- Train/test splitting under three strategies: regular (80/20), Leave-Cell-Out (LOC), and Leave-Drug-Out (LDO) — each evaluated using a single fold rather than repeated k-fold splits
-- Model training and evaluation
-- A comparison table across all four evaluation strategies
-
+Completed
 
 ## Datasets
 
