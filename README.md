@@ -4,13 +4,13 @@
 
 This repository contains the machine learning project developed as part of an Honours research project focused on predicting cancer drug response using pharmacogenomic datasets.
 
-The project investigates the use of machine learning to predict drug response from biological and molecular features of cancer cell lines and drugs, including gene expression, DNA methylation, mutations, proteomics and drug fingerprints. It further explores generalisation across datasets and training strategies, and benchmarks a custom pipeline against the DrEval (drevalpy) framework.
+The project investigates the use of machine learning to predict drug response from biological and molecular features of cancer cell lines and drugs, such as gene expression. It further explores generalisation across datasets and training strategies, and benchmarks a custom pipeline against the DrEval (drevalpy) framework.
 
 ## Why This Matters
 
 Cancer drug response varies significantly between patients, even for the same tumour type, making treatment selection a persistent clinical challenge. Machine learning models trained on pharmacogenomic data offer a route toward predicting which drugs are likely to work for a given cell line or patient profile, supporting precision oncology.
 
-However, models that perform well on one dataset often fail to generalise to new cell lines, drugs, or datasets; a problem that limits their real-world clinical utility. This project investigates that generalisation gap directly, evaluating how models trained under different strategies (including deliberately harder splits like Leave-Cell-Out) hold up when tested on unseen data, and comparing dataset-specific versus combined-dataset training approaches. Generalisation is further tested against patient-derived datasets (BeatAML2, PDX-Bruna), moving beyond cell-line data toward a more clinically relevant test of model robustness.
+However, models that perform well on one dataset often fail to generalise to new cell lines, drugs, or datasets; a problem that limits their real-world clinical utility. This project investigates that generalisation gap directly, evaluating how models trained under Leave-Cell-Out splitting strategy can hold up when tested on unseen data, and comparing dataset-specific versus combined-dataset training approaches. 
 
 ## Project Structure
 
@@ -19,16 +19,8 @@ Honours-Cancer-Drug-Response-Project/
 │
 ├── Projects/
 │   └── Cancer-Drug-Response-Prediction/
-│       ├── configs/
 │       ├── data/
-│       ├── docs/
-│       ├── experiments/
-│       ├── logs/
-│       ├── models/
-│       ├── notebooks/
-│       ├── results/
 │       ├── src/
-│       └── tests/
 │
 ├── README.md
 └── .gitignore
@@ -45,14 +37,10 @@ The core `toy_pipeline` (Random Forest baseline) is functional and has completed
 
 ## Datasets
 
-The project draws on publicly available pharmacogenomic datasets, including:
+The project uses publicly available pharmacogenomic datasets, including:
 - **GDSC1 / GDSC2** — Genomics of Drug Sensitivity in Cancer
 - **CTRPv1 / CTRPv2** — Cancer Therapeutics Response Portal
-- **CCLE** — Cancer Cell Line Encyclopedia
-
-For validation and generalisation testing beyond cell-line data, the project also incorporates patient-derived datasets:
-- **BeatAML2** — patient-derived acute myeloid leukaemia drug response data
-- **PDX-Bruna** — patient-derived xenograft drug response data
+- **CCLE** — Cancer Cell Line Encyclopedi
 
 DrEval-harmonised versions of these datasets (via Zenodo) are used where available, with raw GDSC2 preprocessing (via CurveCurator) also explored as part of the project.
 
@@ -71,7 +59,7 @@ DrEval-harmonised versions of these datasets (via Zenodo) are used where availab
 **Models**
 - Random Forest — ensemble machine learning model (bagging)
 - XGBoost — gradient-boosting machine learning model
-- Multiple Linear Regression — baseline machine learning model
+- Naive Mean Effector Predictor — baseline machine learning model
 
 **Benchmarking**
 - DrEval (drevalpy) — external framework used to benchmark pipeline performance
