@@ -37,7 +37,7 @@ The project uses publicly available pharmacogenomic datasets, including:
 - **CTRPv1 / CTRPv2** — Cancer Therapeutics Response Portal
 - **CCLE** — Cancer Cell Line Encyclopedi
 
-DrEval-harmonised versions of these datasets (via Zenodo) are used where available, with raw GDSC2 preprocessing (via CurveCurator) also explored as part of the project.
+DrEval preprocesses versions of these datasets and obtained via Zenodo.
 
 ## Technologies
 
