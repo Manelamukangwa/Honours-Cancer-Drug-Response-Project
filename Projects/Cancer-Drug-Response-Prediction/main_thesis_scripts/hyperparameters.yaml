@@ -1,0 +1,47 @@
+
+# Data splitting settings
+data_splitting:
+  method: GroupKFold
+  grouping_column: cell_line_name
+  n_splits: 5
+  validation_ratio: 0.10
+  random_state: 42
+
+# Random Forest
+random_forest:
+  random_state: 42
+  tuning:
+    n_estimators: [100, 200, 300]
+    max_depth: [5, 10, 30]
+  fixed:
+    criterion: squared_error
+    max_samples: 0.2
+
+# XGBoost
+xgboost:
+  random_state: 42
+  tuning:
+    n_estimators: [100, 300]
+    colsample_bytree: [0.6, 0.8]
+    reg_alpha: [0.0, 1.0]
+  fixed:
+    learning_rate: 0.1
+    max_depth: 10
+    subsample: 0.8
+    reg_lambda: 0.1
+
+# Simple Neural Network
+neural_network:
+  random_state: 42
+  tuning:
+    max_epochs: [100, 300]
+    hidden_layer_configurations:
+      - [32, 16, 8, 4]
+      - [128, 64, 32]
+      - [64, 64, 32]
+      - [1024, 128, 64, 16]
+  fixed:
+    batch_size: 16
+    early_stopping_patience: 20
+    dropout_probability: 0.3
+    learning_rate: 0.001
